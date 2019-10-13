@@ -71,24 +71,13 @@ macro_rules! test {
 }
 
 test! {
-r"3
-2 3 1
-" => r"3 1 2",
-
-r"5
-1 2 3 4 5
-" => r"1 2 3 4 5",
-
-r"8
-8 2 7 3 4 5 6 1
-" => r"8 2 4 5 6 7 3 1"
 }
 
 fn solve(src: &str) -> String {
     input! {
         source=src,
-        n:usize,
-        a:[i32;n],
+//        n:usize,
+//        a:[i32;n],
     }
     ans = "";
     format!("{}", ans)
