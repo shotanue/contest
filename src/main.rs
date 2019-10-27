@@ -79,9 +79,9 @@ fn gcd(x: i64, y: i64) -> i64 {
 }
 
 #[test]
-fn test_primes(){
+fn test_primes() {
     assert_eq!(primes(1), vec![1]);
-    assert_eq!(primes(140), vec![1,2,2,5,7])
+    assert_eq!(primes(140), vec![1, 2, 2, 5, 7])
 }
 
 #[allow(dead_code)]
