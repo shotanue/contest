@@ -70,6 +70,7 @@ macro_rules! test {
     };
 }
 
+#[allow(dead_code)]
 fn gcd(x: i64, y: i64) -> i64 {
     if y == 0 {
         return x;
@@ -82,6 +83,8 @@ fn test_primes(){
     assert_eq!(primes(1), vec![1]);
     assert_eq!(primes(140), vec![1,2,2,5,7])
 }
+
+#[allow(dead_code)]
 fn primes(num: i64) -> Vec<i64> {
     let mut ans = vec![1];
     let mut cur = num;
