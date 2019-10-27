@@ -70,6 +70,28 @@ macro_rules! test {
     };
 }
 
+fn gcd(x: i64, y: i64) -> i64 {
+    return if y > 0 { gcd(y, y % x) } else { x };
+}
+fn primes(num: i64) -> Vec<i64> {
+    let max = (num as f64).sqrt() as i64 + 1;
+    let mut i = 2;
+    let mut ans = vec![1];
+    let mut now = num;
+    while max >= i {
+        let res = now % i;
+        if res == 0 {
+            now = now / i;
+            ans.push(i);
+        } else {
+            i += 1;
+        }
+    }
+    ans.dedup();
+    return ans;
+}
+
+
 test! {
 }
 
@@ -79,7 +101,7 @@ fn solve(src: &str) -> String {
 //        n:usize,
 //        a:[i32;n],
     }
-    ans = "";
+    let ans = "";
     format!("{}", ans)
 }
 
