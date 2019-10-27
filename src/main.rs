@@ -77,21 +77,26 @@ fn gcd(x: i64, y: i64) -> i64 {
     gcd(y, x % y)
 }
 
+#[test]
+fn test_primes(){
+    assert_eq!(primes(1), vec![1]);
+    assert_eq!(primes(140), vec![1,2,2,5,7])
+}
 fn primes(num: i64) -> Vec<i64> {
-    let max = (num as f64).sqrt() as i64 + 1;
-    let mut i = 2;
     let mut ans = vec![1];
-    let mut now = num;
-    while max >= i {
-        let res = now % i;
-        if res == 0 {
-            now = now / i;
-            ans.push(i);
-        } else {
-            i += 1;
+    let mut cur = num;
+    for i in 2.. {
+        if i * i > num { break; }
+        if cur % i == 0 {
+            while cur % i == 0 {
+                ans.push(i);
+                cur /= i;
+            }
         }
     }
-    ans.dedup();
+    if cur > 1 {
+        ans.push(cur);
+    }
     return ans;
 }
 
