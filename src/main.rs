@@ -71,8 +71,12 @@ macro_rules! test {
 }
 
 fn gcd(x: i64, y: i64) -> i64 {
-    return if y > 0 { gcd(y, y % x) } else { x };
+    if y == 0 {
+        return x;
+    }
+    gcd(y, x % y)
 }
+
 fn primes(num: i64) -> Vec<i64> {
     let max = (num as f64).sqrt() as i64 + 1;
     let mut i = 2;
