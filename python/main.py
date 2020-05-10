@@ -1,1 +1,4 @@
-print('hoge')
+a = input()
+
+print(a)
+
