@@ -1,12 +1,4 @@
 #[allow(dead_code)]
-fn gcd(x: i64, y: i64) -> i64 {
-    if y == 0 {
-        return x;
-    }
-    gcd(y, x % y)
-}
-
-#[allow(dead_code)]
 fn primes(num: i64) -> Vec<i64> {
     let mut ans = vec![1];
     let mut cur = num;
